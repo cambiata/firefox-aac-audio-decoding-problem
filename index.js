@@ -1,10 +1,19 @@
-console.log('hello');
 
-async function test(e) {
-    const response = await window.fetch('arraybufferAAC.dat');
+document.getElementById('btnTest').onclick = async (e) => {
+    const response = await window.fetch('arraybufferAAC.aac');
     const arrayBufferAAC = await response.arrayBuffer();
     console.log('example arrayBuffer:', arrayBufferAAC);
+    decodeAndPlay(arrayBufferAAC);
+}
 
+document.getElementById('btnTest2').onclick = async (e) => {
+    const response = await window.fetch('arraybufferAAC2.aac');
+    const arrayBufferAAC = await response.arrayBuffer();
+    console.log('example arrayBuffer:', arrayBufferAAC);
+    decodeAndPlay(arrayBufferAAC);
+}
+
+async function decodeAndPlay(arrayBufferAAC) {
     const context = new AudioContext();
     try {
         // this is where Firefox fails:
@@ -23,5 +32,4 @@ async function test(e) {
     }
 }
 
-document.getElementById('btnTest').onclick = test;
 
