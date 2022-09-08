@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>This example demonstrates problem with Firefox not accepting certain kind of AAC-encoded audio data.</p>
+    <button id="btnTest">Test decode arrayBuffer and play</button>
+    <p>Works fine on Edge, Chrome, Safari.</p>
+    <p>Fails on Firefox with the following error:</p>
+    <code>EncodingError: The buffer passed to decodeAudioData contains an unknown content type.</code>
+    <script src="index.js"></script>
+</body>
+
+</html>
