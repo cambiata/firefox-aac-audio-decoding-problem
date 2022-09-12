@@ -1,7 +1,9 @@
 # firefox-aac-audio-decoding-problem
 
-This example demonstrates problem with Firefox not accepting certain kind of AAC-encoded audio data.
-Works fine on Edge, Chrome, Safari but fails on Firefox with the following error:
+Firefox's WebAudioApi context decoder seems to be pickier than Chrome, Edge and Safari when it
+comes to some cases of AAC-encoded data.
+
+This example shows a an example that works fine on Edge, Chrome, Safari but fails on Firefox with the following error:
 
 `EncodingError: The buffer passed to decodeAudioData contains an unknown content type.`
 
