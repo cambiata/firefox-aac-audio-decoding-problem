@@ -10,23 +10,31 @@
         * {
             font-family: sans-serif;
         }
+
+        code {
+            font-family: monospace;
+        }
     </style>
 </head>
 
 <body>
-    <p>This example demonstrates problem with Firefox audio decoder not accepting certain kind of AAC-encoded audio data
-        that works well with other browsers.</p>
-    <h2>Example that causes Firefox error</h2>
-    <h4>Works fine on Edge, Chrome, Safari.</h4>
+    <p>Firefox's WebAudioApi context decoder seems to be pickier than Chrome, Edge and Safari when it comes to some
+        cases of AAC-encoded data.</p>
+    <p>The aac file used below (very short, about 0.2 secs) works fine on Edge, Chrome, Safari, both when decoded by
+        WebAudioApi and when opened in browser</p>
+
+
+    <h4>WebAudioApi decoding that causes Firefox error</h4>
+
     <button id="btnTest">Failing: Test decode arrayBuffer and play</button>
     <p>Fails on Firefox with the following error:</p>
-    <p>
-        <code>EncodingError: The buffer passed to decodeAudioData contains an unknown content type.</code>
-    </p>
 
-    <h2>Example working on Firefox</h2>
-    <button id="btnTest2">Working: Test decode arrayBuffer and play</button>
-    <script src="aac.js"></script>
+    <code>EncodingError: The buffer passed to decodeAudioData contains an unknown content type.</code>
+
+
+    <h4>Playback works when opened in tab</h4>
+    <a href="/arraybufferAAC-PROBLEMATIC.aac" target="_blank">Open problematic aac file in separate tab</a>
+
     <script src="index.js"></script>
 </body>
 
