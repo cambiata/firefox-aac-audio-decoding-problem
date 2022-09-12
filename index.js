@@ -1,13 +1,13 @@
 
 document.getElementById('btnTest').onclick = async (e) => {
-    const response = await window.fetch('arraybufferAAC.aac');
+    const response = await window.fetch('arraybufferAAC-PROBLEMATIC.aac');
     const arrayBufferAAC = await response.arrayBuffer();
     console.log('example arrayBuffer:', arrayBufferAAC);
     decodeAndPlay(arrayBufferAAC);
 }
 
 document.getElementById('btnTest2').onclick = async (e) => {
-    const response = await window.fetch('arraybufferAAC2.aac');
+    const response = await window.fetch('arraybufferAAC-WORKING.aac');
     const arrayBufferAAC = await response.arrayBuffer();
     console.log('example arrayBuffer:', arrayBufferAAC);
     decodeAndPlay(arrayBufferAAC);
